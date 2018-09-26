@@ -11,6 +11,9 @@
 .left { float: left; }
 .right { float: right; }
 
+
+
+
 @media print {
     .page-container,.page-container .page-content {
         padding: 0 !important;
@@ -50,6 +53,7 @@
     padding: 0;
     height: 126px;
     background-image: none;
+    background: #215F21 !important;
 }
 
 .page-header:after,.page-header:before {
@@ -83,6 +87,14 @@
     width: 255px;
     height: 75px;
     position: absolute;
+    margin-top: 42px;
+}
+
+@media (max-width:991px) {
+  .page-header .page-header-top .page-logo {
+    margin-top: 6px !important;
+    margin-left: -1px !important;
+  }
 }
 
 .page-header .page-header-top .top-menu {
@@ -482,7 +494,7 @@
 .page-header .page-header-top .top-menu .navbar-nav li.dropdown-dark .dropdown-menu {
     border: 0;
 }
-
+.page-header-top
 .page-header .page-header-top .top-menu .navbar-nav li.dropdown-dark .dropdown-menu:before {
     border-left: none;
     border-right: none;
@@ -686,6 +698,7 @@
 .search-form .input-group .input-group-btn .btn.submit {
     padding: 0;
     height: 34px;
+    width: 100%;
     z-index: 3;
     position: relative;
     top: 10px;
@@ -697,7 +710,7 @@
 }
 
 .search-form.open {
-    width: 500px !important;
+
     transition: width .4s;
 }
 

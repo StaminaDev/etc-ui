@@ -14,8 +14,8 @@ var Layout = function () {
     // this function handles responsive layout on screen size resize or mobile device rotate.
 
     // Handles header
-    var handleHeader = function () {        
-        // handle search box expand/collapse        
+    var handleHeader = function () {
+        // handle search box expand/collapse
         $('.page-header').on('click', '.search-form', function (e) {
             $(this).addClass("open");
             $(this).find('.form-control').focus();
@@ -44,7 +44,7 @@ var Layout = function () {
         // handle scrolling to top on responsive menu toggler click when header is fixed for mobile view
         $('body').on('click', '.page-header-top-fixed .page-header-top .menu-toggler', function(){
             App.scrollTop();
-        });     
+        });
     };
 
     // Handles main menu
@@ -56,7 +56,7 @@ var Layout = function () {
                 var menu = $(".page-header .page-header-menu");
                 if (menu.is(":visible")) {
                     menu.slideUp(300);
-                } else {  
+                } else {
                     menu.slideDown(300);
                 }
 
@@ -67,7 +67,7 @@ var Layout = function () {
         });
 
         // handle sub dropdown menu click for mobile devices only
-        $(".hor-menu .menu-dropdown > a, .hor-menu .dropdown-submenu > a").on("click", function(e) {                
+        $(".hor-menu .menu-dropdown > a, .hor-menu .dropdown-submenu > a").on("click", function(e) {
             if (App.getViewPort().width < resBreakpointMd) {
                 if ($(this).next().hasClass('dropdown-menu')) {
                     e.stopPropagation();
@@ -89,21 +89,22 @@ var Layout = function () {
                      App.scrollTop();
                 }
             }
+
         });
 
-        // hold mega menu content open on click/tap. 
+        // hold mega menu content open on click/tap.
         $(document).on('click', '.mega-menu-dropdown .dropdown-menu, .classic-menu-dropdown .dropdown-menu', function (e) {
             e.stopPropagation();
         });
 
-        // handle fixed mega menu(minimized) 
-        $(window).scroll(function() {                
+        // handle fixed mega menu(minimized)
+        $(window).scroll(function() {
             var offset = 75;
             if ($('body').hasClass('page-header-menu-fixed')) {
                 if ($(window).scrollTop() > offset){
                     $(".page-header-menu").addClass("fixed");
                 } else {
-                    $(".page-header-menu").removeClass("fixed");  
+                    $(".page-header-menu").removeClass("fixed");
                 }
             }
 
@@ -111,7 +112,7 @@ var Layout = function () {
                 if ($(window).scrollTop() > offset){
                     $(".page-header-top").addClass("fixed");
                 } else {
-                    $(".page-header-top").removeClass("fixed");  
+                    $(".page-header-top").removeClass("fixed");
                 }
             }
         });
@@ -119,7 +120,7 @@ var Layout = function () {
 
     // Handle sidebar menu links
     var handleMainMenuActiveLink = function(mode, el) {
-        var url = location.hash.toLowerCase();    
+        var url = location.hash.toLowerCase();
 
         var menu = $('.hor-menu');
 
@@ -127,11 +128,11 @@ var Layout = function () {
             el = $(el);
         } else if (mode === 'match') {
             menu.find("li > a").each(function() {
-                var path = $(this).attr("href").toLowerCase();       
-                // url match condition         
+                var path = $(this).attr("href").toLowerCase();
+                // url match condition
                 if (path.length > 1 && url.substr(1, path.length - 1) == path.substr(1)) {
                     el = $(this);
-                    return; 
+                    return;
                 }
             });
         }
@@ -142,7 +143,7 @@ var Layout = function () {
 
         if (el.attr('href').toLowerCase() === 'javascript:;' || el.attr('href').toLowerCase() === '#') {
             return;
-        }        
+        }
 
         // disable active states
         menu.find('li.active').removeClass('active');
@@ -158,28 +159,28 @@ var Layout = function () {
         });
     };
 
-    // Handles main menu on window resize
+    // Handles main menu on window resize //пидоры
     var handleMainMenuOnResize = function() {
         // handle hover dropdown menu for desktop devices only
-        var width = App.getViewPort().width;
-        var menu = $(".page-header-menu");
-            
-        if (width >= resBreakpointMd) { 
-            $(".page-header-menu").css("display", "block");
-        } else if (width < resBreakpointMd) {
-            $(".page-header-menu").css("display", "none"); 
-        } 
+        // var width = App.getViewPort().width;
+        // var menu = $(".page-header-menu");
+        //
+        // if (width >= resBreakpointMd) {
+        //     $(".page-header-menu").css("display", "block");
+        // } else if (width < resBreakpointMd) {
+        //     $(".page-header-menu").css("display", "none");
+        // }
     };
 
     var handleContentHeight = function() {
         return;
         var height;
 
-        if ($('body').height() < App.getViewPort().height) {            
+        if ($('body').height() < App.getViewPort().height) {
             height = App.getViewPort().height -
-                $('.page-header').outerHeight() - 
+                $('.page-header').outerHeight() -
                 ($('.page-container').outerHeight() - $('.page-content').outerHeight()) -
-                $('.page-prefooter').outerHeight() - 
+                $('.page-prefooter').outerHeight() -
                 $('.page-footer').outerHeight();
 
             $('.page-content').css('min-height', height);
@@ -199,7 +200,7 @@ var Layout = function () {
                     $('.scroll-to-top').fadeOut(duration);
                 }
             });
-        } else {  // general 
+        } else {  // general
             $(window).scroll(function() {
                 if ($(this).scrollTop() > offset) {
                     $('.scroll-to-top').fadeIn(duration);
@@ -208,7 +209,7 @@ var Layout = function () {
                 }
             });
         }
-        
+
         $('.scroll-to-top').click(function(e) {
             e.preventDefault();
             $('html, body').animate({scrollTop: 0}, duration);
@@ -219,29 +220,29 @@ var Layout = function () {
     //* END:CORE HANDLERS *//
 
     return {
-        
+
         // Main init methods to initialize the layout
         // IMPORTANT!!!: Do not modify the core handlers call order.
 
         initHeader: function() {
-            handleHeader(); // handles horizontal menu    
+            handleHeader(); // handles horizontal menu
             handleMainMenu(); // handles menu toggle for mobile
             App.addResizeHandler(handleMainMenuOnResize); // handle main menu on window resize
 
-            if (App.isAngularJsApp()) {      
-                handleMainMenuActiveLink('match'); // init sidebar active links 
+            if (App.isAngularJsApp()) {
+                handleMainMenuActiveLink('match'); // init sidebar active links
             }
         },
 
         initContent: function() {
-            handleContentHeight(); // handles content height 
+            handleContentHeight(); // handles content height
         },
 
         initFooter: function() {
             handleGoTop(); //handles scroll to top functionality in the footer
         },
 
-        init: function () {            
+        init: function () {
             this.initHeader();
             this.initContent();
             this.initFooter();
@@ -254,7 +255,7 @@ var Layout = function () {
         closeMainMenu: function() {
             $('.hor-menu').find('li.open').removeClass('open');
 
-            if (App.getViewPort().width < resBreakpointMd && $('.page-header-menu').is(":visible")) { // close the menu on mobile view while laoding a page 
+            if (App.getViewPort().width < resBreakpointMd && $('.page-header-menu').is(":visible")) { // close the menu on mobile view while laoding a page
                 $('.page-header .menu-toggler').click();
             }
         },
@@ -271,7 +272,7 @@ var Layout = function () {
 }();
 
 if (App.isAngularJsApp() === false) {
-    jQuery(document).ready(function() {   
+    jQuery(document).ready(function() {
         Layout.init(); // init metronic core componets
     });
 }

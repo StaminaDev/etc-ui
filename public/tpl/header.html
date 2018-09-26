@@ -3,24 +3,24 @@
     <div class="container">
     <!-- BEGIN LOGO -->
     <div class="page-logo">
-        <a href="/">
-            <img ng-show="settings.logo" src="{{settings.logo}}" alt="logo" class="logo-default" />
-        </a>
+
+          <a href="/"><h1 style="color: #fff;font-weight: bold;">ETC Explorer</h1></a>
+
     </div>
     <!-- END LOGO -->
             <!-- BEGIN RESPONSIVE MENU TOGGLER -->
-        <a href="javascript:;" class="menu-toggler btn btn-sm green-haze btn-outline">MENU</a>
+        <a href="#" class="menu-toggler btn btn-sm green-haze btn-outline">MENU</a>
         <!-- END RESPONSIVE MENU TOGGLER -->
         <!-- BEGIN TOP NAVIGATION MENU -->
-        <div class="top-menu">
+          <div class="top-menu" class="col-xs-12" style="background-color: #215F21;">
             <ul class="nav navbar-nav pull-right">
                 <li class="dropdown">
                     <form name="form.searchForm" class="search-form">
-                        <div class="input-group">
-                            <input type="text" name="explorerSearch" class="form-control" placeholder="Search by Address / Txhash / BlockNum / BlockHash" ng-model="form.searchInput" ng-keyup="$event.keyCode == 13 ? searchQuery(form.searchInput) : null">
+                        <div class="input-group" >
+                            <input type="text" name="explorerSearch" style="border: 0" class="form-control" placeholder="Search by Address / Txhash / BlockNum / BlockHash" ng-model="form.searchInput" ng-keyup="$event.keyCode == 13 ? searchQuery(form.searchInput) : null">
                             <span class="input-group-btn">
                                 <a class="btn" ng-click="searchQuery(form.searchInput)">
-                                    <i class="icon-magnifier"></i>
+                                    <i class="icon-magnifier" style="color: #fff;"></i>
                                 </a>
                             </span>
                         </div>
@@ -45,7 +45,7 @@
                     <a href="/">Home</a>
                 </li>
                 <li class="menu-dropdown mega-menu-dropdown ">
-                    <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="/token" class="dropdown-toggle"> Tokens
+                    <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="#" class="dropdown-toggle"> Tokens
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu" style="min-width: 410px">
@@ -83,7 +83,7 @@
                     </ul>
                 </li>
                 <li class="menu-dropdown mega-menu-dropdown ">
-                    <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;" class="dropdown-toggle"> Stats
+                    <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="#" class="dropdown-toggle"> Stats
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu">
@@ -120,7 +120,7 @@
                     </ul>
                 </li>
                 <li class="menu-dropdown classic-menu-dropdown ">
-                    <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;"> Misc
+                    <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="#"> Misc
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu pull-left">
@@ -137,7 +137,7 @@
                     </ul>
                 </li>
                 <li class="menu-dropdown classic-menu-dropdown ">
-                    <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;"> Community
+                    <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="#"> Community
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu pull-left">
@@ -182,8 +182,35 @@
 
                     </ul>
                 </li>
+                <li class="menu-dropdown classic-menu-dropdown ">
+                    <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="#"> Partners
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu pull-left">
+                      <li>
+                          <a href="http://guarda.co/" target="_blank">
+                              <i class="fa fa-shield"></i>
+                              <span class="title" data-toggle="tooltip" title="Guarda Web Wallet">Guarda</span>
+                          </a>
+
+                      </li>
+                      <li>
+                        <a href="http://changenow.io/" target="_blank">
+                            <i class="fa fa-exchange"></i>
+                            <span class="title" data-toggle="tooltip" title="Limitless exchanger with the lowest commission on the market">ChangeNOW</span>
+                        </a>
+                      </li>
+                    </li>
+                    <li>
+                      <a href="https://coincodex.com/crypto/ethereum-classic/" target="_blank">
+                          <i class="fa fa-bitcoin"></i>
+                          <span class="title" data-toggle="tooltip" title="Limitless exchanger with the lowest commission on the market">CoinCodex</span>
+                      </a>
+                    </li>
+                    </ul>
+                </li>
             </ul>
-        </div>
+        </div><br><br>
         <!-- END MEGA MENU -->
     </div>
 </div>

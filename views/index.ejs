@@ -31,7 +31,8 @@
         <link href="/css/plugins.min.css" rel="stylesheet" type="text/css" />
         <link href="/css/layout.css" rel="stylesheet" type="text/css" />
         <link href="/css/custom.css" rel="stylesheet" type="text/css" />
-        <link ng-show="<%=settings.customCss%>" href="/css/<%=settings.customCss%>" rel="stylesheet" type="text/css" />
+        <link ng-show="green-haze.min.css" href="/css/green-haze.min.css" rel="stylesheet" type="text/css" />
+        <!-- link ng-show="<%=settings.customCss%>" href="/css/<%=settings.customCss%>" rel="stylesheet" type="text/css" / -->
         <!-- END THEME STYLES -->
     <!-- END HEAD -->
     <!-- BEGIN BODY -->
@@ -106,10 +107,13 @@
         <script src="/js/directives.js" type="text/javascript"></script>
         <!-- END APP LEVEL ANGULARJS SCRIPTS -->
         <!-- BEGIN APP LEVEL JQUERY SCRIPTS -->
-        <script src="/js/layout.min.js" type="text/javascript"></script>
+        <script src="/js/layout.js" type="text/javascript"></script>
         <script src="/plugins/d3.v3.min.js" type="text/javascript"></script>
         <script src="/plugins/lodash.min.js" type="text/javascript"></script>
         <!-- END APP LEVEL JQUERY SCRIPTS -->
+        <!--CoinGecko -->
+        <script src="https://widgets.coingecko.com/coingecko-coin-price-chart-widget.js"></script>
+        <!--End CoinGecko -->
         <link id="ng_load_plugins_after" />
         <!-- END JAVASCRIPTS -->
     </body>
