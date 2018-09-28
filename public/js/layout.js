@@ -159,7 +159,7 @@ var Layout = function () {
         });
     };
 
-    // Handles main menu on window resize //пидоры
+    // Handles main menu on window resize
     var handleMainMenuOnResize = function() {
         // handle hover dropdown menu for desktop devices only
         // var width = App.getViewPort().width;
