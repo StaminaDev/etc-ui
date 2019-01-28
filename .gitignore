@@ -45,5 +45,8 @@ config.json
 /nbproject/private/
 
 .DS_Store
+<<<<<<< HEAD
 
 config.json
+=======
+>>>>>>> a30688f508fc8f67190c6d051481e8984a7eafd5
